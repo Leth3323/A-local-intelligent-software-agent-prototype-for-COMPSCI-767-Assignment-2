@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Planning Agent Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #202638;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.35;
+    }
+
+    .page {
+      width: 186mm;
+      min-height: 273mm;
+      margin: 0 auto;
+      padding: 0;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .header {
+      border-bottom: 2px solid #26324a;
+      padding-bottom: 7px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 5px;
+      font-size: 20pt;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #556176;
+      font-size: 9.4pt;
+    }
+
+    .repo {
+      margin-top: 5px;
+      font-size: 8.2pt;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    h2 {
+      margin: 0 0 7px;
+      color: #182033;
+      font-size: 12pt;
+    }
+
+    h3 {
+      margin: 0 0 5px;
+      color: #26324a;
+      font-size: 10.2pt;
+    }
+
+    p {
+      margin: 0 0 8px;
+    }
+
+    .box {
+      border: 1px solid #d8deea;
+      border-radius: 7px;
+      background: #f8fafc;
+      padding: 11px 12px;
+      margin-bottom: 12px;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .step {
+      min-height: 47px;
+      border: 1.5px solid #26324a;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 7px 8px;
+      position: relative;
+      box-shadow: 3px 3px 0 #dbe4f5;
+    }
+
+    .step::after {
+      content: ">";
+      position: absolute;
+      right: -10px;
+      top: 16px;
+      color: #26324a;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+
+    .step:nth-child(4)::after,
+    .step:nth-child(8)::after {
+      display: none;
+    }
+
+    .step-title {
+      display: block;
+      margin-bottom: 2px;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 8.7pt;
+    }
+
+    .step-note {
+      color: #5d6678;
+      font-size: 7.5pt;
+      line-height: 1.18;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .module {
+      border-left: 4px solid #365fd7;
+      background: #ffffff;
+      padding: 8px 9px;
+      border-radius: 5px;
+    }
+
+    .module p {
+      margin: 0;
+      color: #4b5568;
+      font-size: 8.4pt;
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #26324a;
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+    }
+
+    .demo-header h1 {
+      font-size: 18pt;
+    }
+
+    .demo-header span {
+      color: #556176;
+      font-size: 8.2pt;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 10px;
+    }
+
+    figure {
+      margin: 0;
+      border: 1px solid #d8deea;
+      border-radius: 7px;
+      background: #ffffff;
+      overflow: hidden;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: 78mm;
+      object-fit: contain;
+      background: #f6f8fc;
+      border-bottom: 1px solid #d8deea;
+    }
+
+    figcaption {
+      min-height: 22mm;
+      padding: 5px 8px 6px;
+      color: #384255;
+      font-size: 7.25pt;
+      line-height: 1.18;
+    }
+
+    figcaption strong {
+      color: #1f2937;
+    }
+
+    .conclusion {
+      margin-top: 7px;
+      border-top: 1px solid #d8deea;
+      padding-top: 6px;
+      font-size: 8.2pt;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Study Planning Agent</h1>
+      <p class="subtitle">Local Intelligent Software Agent Prototype for COMPSCI 767 Assignment 2</p>
+      <p class="repo">
+        GitHub repository:
+        <a href="https://github.com/Leth3323/A-local-intelligent-software-agent-prototype-for-COMPSCI-767-Assignment-2">https://github.com/Leth3323/A-local-intelligent-software-agent-prototype-for-COMPSCI-767-Assignment-2</a>
+      </p>
+    </header>
+
+    <section class="box">
+      <h2>Project Overview</h2>
+      <p>
+        Study Planning Agent is a local browser-based intelligent software agent prototype. It acts as a personal study planning assistant: the user enters a natural-language goal, and the agent converts it into a structured plan with a concise title, topic, duration, difficulty level, task type, summary, strategy, priorities, notes, and daily tasks.
+      </p>
+      <p>
+        The prototype stores plans locally and supports practical interaction after generation, including viewing plan details, updating a plan from feedback, deleting previous plans, and changing task progress between <strong>To Do</strong>, <strong>In Progress</strong>, and <strong>Done</strong>.
+      </p>
+    </section>
+
+    <section class="box">
+      <h2>System Design and Agent Workflow</h2>
+      <div class="workflow" aria-label="Agent workflow diagram">
+        <div class="step"><span class="step-title">User Goal</span><span class="step-note">Natural-language study need</span></div>
+        <div class="step"><span class="step-title">Browser UI</span><span class="step-note">Collects goal and feedback</span></div>
+        <div class="step"><span class="step-title">Local Server</span><span class="step-note">Routes API requests</span></div>
+        <div class="step"><span class="step-title">Perception</span><span class="step-note">Extracts topic, days, difficulty</span></div>
+        <div class="step"><span class="step-title">Decision</span><span class="step-note">Builds plan and schedule</span></div>
+        <div class="step"><span class="step-title">Action</span><span class="step-note">Packages plan records</span></div>
+        <div class="step"><span class="step-title">Memory</span><span class="step-note">Stores plans and progress</span></div>
+        <div class="step"><span class="step-title">Browser Update</span><span class="step-note">Shows latest plan/history</span></div>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>Agent Modules</h2>
+      <div class="module-grid">
+        <article class="module">
+          <h3>Perception</h3>
+          <p>Interprets the raw user goal and identifies the topic, intended duration, difficulty level, and task type.</p>
+        </article>
+        <article class="module">
+          <h3>Decision</h3>
+          <p>Creates or revises the structured study plan, including daily tasks, strategy, priorities, warnings, and notes.</p>
+        </article>
+        <article class="module">
+          <h3>Action</h3>
+          <p>Packages the generated output into a plan record and preserves task-status information during plan updates.</p>
+        </article>
+        <article class="module">
+          <h3>Memory</h3>
+          <p>Saves generated plans, feedback revisions, task progress, and deletions in the local project data store.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>How the Agent Works</h2>
+      <p>
+        The user submits a goal through the browser. The local server passes the request to the agent pipeline, which analyses the input, generates a day-by-day plan, records it locally, and returns it to the interface. The user can then inspect details, mark progress, revise the plan with feedback, or remove outdated records.
+      </p>
+    </section>
+  </main>
+
+  <main class="page">
+    <header class="demo-header">
+      <div>
+        <h1>System Demonstration</h1>
+        <p class="subtitle">Screenshots from the local Study Planning Agent prototype</p>
+      </div>
+      <span>COMPSCI 767 Assignment 2</span>
+    </header>
+
+    <section class="screenshots">
+      <figure>
+        <img src="assets/01_home_goal_input.png" alt="Home page and goal input interface">
+        <figcaption><strong>Figure 1.</strong> Home page and goal input interface. The user enters a natural-language study goal, and the agent receives this input as the starting point for plan generation.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/02_latest_generated_plan_overview.png" alt="Generated plan overview">
+        <figcaption><strong>Figure 2.</strong> Generated plan overview. The agent analyses the user goal and converts it into a structured study plan, including a concise title, topic, duration, difficulty level, task type, summary, strategy, priorities, and study notes.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/03_daily_task_schedule.png" alt="Daily task schedule">
+        <figcaption><strong>Figure 3.</strong> Daily task schedule. The agent breaks the goal into actionable daily tasks, showing how the planning output is organised into smaller steps for the user to follow.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/04_planning_history_and_architecture.png" alt="Planning history and agent architecture">
+        <figcaption><strong>Figure 4.</strong> Planning history and agent architecture. The system stores previous plans, tracks task progress, supports view/edit and delete actions, and presents the agent workflow from browser input to perception, decision, action, and memory.</figcaption>
+      </figure>
+    </section>
+
+    <section class="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        The prototype demonstrates a complete local intelligent-agent loop. It turns informal study goals into actionable plans, stores the results locally, and supports continued user interaction through feedback, task-progress updates, history, editing, and deletion.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

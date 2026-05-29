@@ -120,6 +120,16 @@ The app runs locally on port `8000`.
 
 Demo video: https://youtu.be/ddgtlx5cDr8
 
+## Assignment Output Notes
+
+- GitHub repository: https://github.com/Leth3323/A-local-intelligent-software-agent-prototype-for-COMPSCI-767-Assignment-2
+- Demo video: https://youtu.be/ddgtlx5cDr8
+- Two-page report draft: `docs/report.md`
+- Printable HTML report: `docs/report.html`
+- The prototype demonstrates a local intelligent-agent workflow: perception, decision-making, action, and memory.
+- The app stores runtime-generated plans locally and does not require API keys, cloud services, or a database.
+- Screenshots for the final report can be inserted into the placeholder sections in `docs/report.md` or `docs/report.html`.
+
 ## Project Structure
 
 ```text
@@ -134,6 +144,8 @@ Demo video: https://youtu.be/ddgtlx5cDr8
 ├── data/
 │   └── sample_goals.txt
 ├── docs/
+│   ├── report.html
+│   ├── report.md
 │   ├── report_notes.md
 │   └── system_design.md
 ├── tests/
@@ -163,4 +175,3 @@ Demo video: https://youtu.be/ddgtlx5cDr8
   ```bash
   python -m unittest discover -s tests -v
   ```
-
